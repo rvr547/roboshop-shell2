@@ -44,6 +44,10 @@ cd /app
 
 VALIDATE $? "Change to app directory"
 
+unzip /tmp/user.zip &>> $LOGFILE
+
+VALIDATE $? "Unzip cataloguee"
+
 npm install &>>$LOGFILE
 
 VALIDATE $? "Installing dependencies"
