@@ -9,7 +9,7 @@ LOGDIR=/tmp
 LOGFILE=$LOGDIR/$0-$DATE.log
 USER_ID=$(id -u)
 
-if [ $USERID -ne 0 ]
+if [ $USER_ID -ne 0 ]
 then
     echo -e "$R ERROR: Root access required to install the package $N"
     exit 1
