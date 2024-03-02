@@ -28,7 +28,7 @@ curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>> $LOGFILE
 
 VALIDATE $? "npm setup"
 
-yum install nodejs -y &<<$LOGFILE
+yum install nodejs -y &<< $LOGFILE
 
 VALIDATE $? "Installing nodejs"
 
@@ -40,11 +40,11 @@ curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &<<$L
 
 VALIDATE $? "Downloading User"
 
-cd /app &<<$LOGFILE
+cd /app &<< $LOGFILE
 
 VALIDATE $? "Change to app directory"
 
-npm install &<<$LOGFILE
+npm install &<< $LOGFILE
 
 VALIDATE $? "Installing dependencies"
 
@@ -52,15 +52,15 @@ cp /home/centos/roboshop-shell2/user.service /etc/systemd/system/user.service &<
 
 VALIDATE $? "Copy user.service"
 
-systemctl daemon-reload &<<$LOGFILE
+systemctl daemon-reload &<< $LOGFILE
 
 VALIDATE $? "daemon-reload"
 
-systemctl enable user &<<$LOGFILE
+systemctl enable user &<< $LOGFILE
 
 VALIDATE $? "enable user"
 
-systemctl start user &<<$LOGFILE
+systemctl start user &<< $LOGFILE
 
 VALIDATE $? "start user"
 
@@ -68,7 +68,7 @@ cp /home/centos/roboshop-shell2/mongo.repo /etc/yum.repos.d/mongo.repo &<<$LOGFI
 
 VALIDATE $? "copy mongo repo"
 
-yum install mongodb-org-shell -y &<<$LOGFILE
+yum install mongodb-org-shell -y &<< $LOGFILE
 
 VALIDATE $? "Install mongo db"
 
