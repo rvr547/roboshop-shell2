@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 USER_ID=$(id -u)
 
-if [ $USER_ID != 0]
+if [ $USER_ID != 0 ]
 then
     echo -e "$R ERROR: Please use root access $N"
     exit 1
