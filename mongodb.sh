@@ -17,7 +17,7 @@ VALIDATE()
 {
     if [ $1 != 0 ]
     then
-        echo -e "$G $2....FAILED $N"
+        echo -e "$R $2....FAILED $N"
         exit 1
     else
         echo -e "$G $2....SUCCESS $N"
@@ -40,7 +40,7 @@ systemctl start mongod &>>$LOGFILE
 
 VALIDATE $? "start mongod"
 
-sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf &>>$LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>$LOGFILE
 
 VALIDATE $? "Allow all traffic"
 
