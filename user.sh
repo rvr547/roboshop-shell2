@@ -72,6 +72,6 @@ yum install mongodb-org-shell -y &<<$LOGFILE
 
 VALIDATE $? "Install mongo db"
 
-mongo --host mongodb.preprv.online </app/schema/user.js &<<$LOGFILE
+mongo --host mongodb.preprv.online </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? "Load schema DB data"
